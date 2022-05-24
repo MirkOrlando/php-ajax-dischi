@@ -5,3 +5,24 @@ header {
 header .logo {
     width: 70px;
 }
+
+main {
+    min-height: 100vh;
+    background-color: #1E2D3B;
+}
+
+.card {
+    background-color: #2E3A46;
+}
+
+.card_poster {
+    aspect-ratio: 1 / 1;
+}
+
+.card .card-title {
+    color: white;
+}
+
+.card .card-text {
+    color: #808080;
+}
