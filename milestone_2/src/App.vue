@@ -1,9 +1,18 @@
 <template>
   <div id="app">
-    <header class="py-2">
+    <header class="p-2 d-flex justify-content-between align-items-center">
       <div class="logo">
         <img class="img-fluid" src="@/assets/img/spotify-logo.png" alt="logo" />
       </div>
+      <form action="#">
+        <select name="genre" id="" v-model="genreSelected" @change="call_api">
+          <option value="">All</option>
+          <option value="Rock">Rock</option>
+          <option value="Pop">Pop</option>
+          <option value="Jazz">Jazz</option>
+          <option value="Metal">Metal</option>
+        </select>
+      </form>
     </header>
     <main>
       <div class="container py-4">
@@ -45,20 +54,28 @@ export default {
   data() {
     return {
       albums: null,
+      genreSelected: "",
     };
   },
+  methods: {
+    call_api() {
+      console.log("calling");
+      console.log(this.genreSelected);
+      axios
+        .get(
+          `http://localhost/PHP/php-ajax-dischi/milestone_2/src/assets/genre.php/?genre=${this.genreSelected}`
+        )
+        .then((response) => {
+          //console.log(response);
+          this.albums = response.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
   mounted() {
-    axios
-      .get(
-        "http://localhost/PHP/php-ajax-dischi/milestone_2/src/assets/albums.php"
-      )
-      .then((response) => {
-        //console.log(response);
-        this.albums = response.data;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    this.call_api();
   },
 };
 </script>
