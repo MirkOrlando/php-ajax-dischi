@@ -33,7 +33,7 @@
         </div>
       </div>
     </main>
-    <footer>SITE FOOTER HERE</footer>
+    <footer class="text-center text-white py-3">Copyright &copy;</footer>
   </div>
 </template>
 
