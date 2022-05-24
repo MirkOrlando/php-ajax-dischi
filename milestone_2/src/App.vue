@@ -49,7 +49,9 @@ export default {
   },
   mounted() {
     axios
-      .get("http://localhost/PHP/php-ajax-dischi/milestone_1/db.php")
+      .get(
+        "http://localhost/PHP/php-ajax-dischi/milestone_2/src/assets/albums.php"
+      )
       .then((response) => {
         //console.log(response);
         this.albums = response.data;
