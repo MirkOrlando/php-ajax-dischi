@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <header>SITE HEADER HERE</header>
+    <header class="py-2">
+      <div class="logo">
+        <img class="img-fluid" src="@/assets/img/spotify-logo.png" alt="logo" />
+      </div>
+    </header>
     <main>SITE MAIN HERE</main>
     <footer>SITE FOOTER HERE</footer>
   </div>
@@ -31,9 +35,37 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import "~/src/assets/scss/style";
+header {
+  background-color: #2e3a46;
+}
+
+header .logo {
+  width: 70px;
+}
+
+main {
+  min-height: 100vh;
+  background-color: #1e2d3b;
+}
+
+.card {
+  background-color: #2e3a46;
+}
+
+.card_poster {
+  aspect-ratio: 1 / 1;
+}
+
+.card .card-title {
+  color: white;
+}
+
+.card .card-text {
+  color: #808080;
+}
+
+footer {
+  background-color: #1e2d3b;
 }
 </style>
